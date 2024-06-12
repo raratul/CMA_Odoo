@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_import_collections_wizard" model="ir.ui.view">
+        <field name="name">import.collections.wizard.form</field>
+        <field name="model">collections_import.import_wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import Collections">
+                <group>
+                    <field name="api_token"/>
+                </group>
+                <footer>
+                    <button name="import_collections" type="object" string="Import" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_collections_wizard" model="ir.actions.act_window">
+        <field name="name">Import Collections</field>
+        <field name="res_model">collections_import.import_wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_import_collections" parent="menu_collections_root" action="action_import_collections_wizard" sequence="20"/>
+</odoo>

@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_collection_tree" model="ir.ui.view">
+        <field name="name">collection.tree</field>
+        <field name="model">collections_import.collection</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="owner"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="number_of_items"/>
+                <field name="category"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_collection_form" model="ir.ui.view">
+        <field name="name">collection.form</field>
+        <field name="model">collections_import.collection</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="owner"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="number_of_items"/>
+                        <field name="category"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_collections" model="ir.actions.act_window">
+        <field name="name">Collections</field>
+        <field name="res_model">collections_import.collection</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_collections_root" name="Collections" sequence="10"/>
+    <menuitem id="menu_collections" parent="menu_collections_root" action="action_collections" sequence="10"/>
+</odoo>
