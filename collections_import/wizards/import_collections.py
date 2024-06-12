@@ -8,7 +8,7 @@ class ImportCollectionsWizard(models.TransientModel):
     api_token = fields.Char(string='API Token', required=True)
 
     def import_collections(self):
-        url = 'http://collectionmanagementapp.com/api/v1/collections'
+        url = 'https://collectionmanagementapp.onrender.com/api/v1/collections'
         headers = {
             'Authorization': self.api_token
         }
